@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -141,6 +142,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="wR4-M3-lts" kind="show" id="CM3-3h-y8Z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="EoY-hS-uYU" style="IBUITableViewCellStyleDefault" id="iax-Aw-bbR">
+                                        <rect key="frame" x="0.0" y="284" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iax-Aw-bbR" id="fpX-uc-Vxu">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Push" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EoY-hS-uYU">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zRd-Yq-bT1" kind="show" id="KVa-zd-zDk"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -402,6 +423,64 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3860" y="1136"/>
+        </scene>
+        <!--Push View Controller-->
+        <scene sceneID="uxI-Pg-g0q">
+            <objects>
+                <viewController id="zRd-Yq-bT1" customClass="PushViewController" customModule="DynamicAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WjH-PS-AYO"/>
+                        <viewControllerLayoutGuide type="bottom" id="oZV-gq-S9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H7T-HH-aGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k60-13-nZJ">
+                                <rect key="frame" x="256" y="256" width="88" height="88"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="FsP-bX-wZD"/>
+                                    <constraint firstAttribute="width" constant="88" id="ubN-Qa-QbD"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OHB-SD-drF">
+                                <rect key="frame" x="0.0" y="572" width="600" height="29"/>
+                                <segments>
+                                    <segment title="Instantaneous"/>
+                                    <segment title="Continuous"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMode:" destination="zRd-Yq-bT1" eventType="valueChanged" id="Yxq-ja-zLb"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="k60-13-nZJ" firstAttribute="centerY" secondItem="H7T-HH-aGZ" secondAttribute="centerY" id="FVR-oT-trm"/>
+                            <constraint firstItem="oZV-gq-S9c" firstAttribute="top" secondItem="OHB-SD-drF" secondAttribute="bottom" id="JwQ-UP-mZX"/>
+                            <constraint firstItem="OHB-SD-drF" firstAttribute="leading" secondItem="H7T-HH-aGZ" secondAttribute="leadingMargin" constant="-20" id="Rz2-0W-Kuq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OHB-SD-drF" secondAttribute="trailing" constant="-20" id="jaL-C7-GHP"/>
+                            <constraint firstItem="k60-13-nZJ" firstAttribute="centerX" secondItem="H7T-HH-aGZ" secondAttribute="centerX" id="uv9-kS-hJq"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aBE-p6-Ojz" appends="YES" id="2U6-xT-Y9k"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="itemView" destination="k60-13-nZJ" id="cNq-0p-FCP"/>
+                        <outlet property="segmentedControl" destination="OHB-SD-drF" id="boS-ss-StV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLg-ec-nxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aBE-p6-Ojz">
+                    <connections>
+                        <action selector="tap:" destination="zRd-Yq-bT1" id="5t8-f4-Rxl"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2523" y="1871"/>
         </scene>
     </scenes>
 </document>

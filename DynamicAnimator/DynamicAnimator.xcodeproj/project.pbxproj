@@ -12,6 +12,7 @@
 		BB3BD6431C2A79CE00CE88A6 /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BD6421C2A79CE00CE88A6 /* AttachmentViewController.swift */; };
 		BB3BD6451C2B94EC00CE88A6 /* CollisionGravitySpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BD6441C2B94EC00CE88A6 /* CollisionGravitySpringViewController.swift */; };
 		BB3BD6571C2BBCC000CE88A6 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BD6561C2BBCC000CE88A6 /* SnapViewController.swift */; };
+		BB3BD6591C2BBF5600CE88A6 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BD6581C2BBF5600CE88A6 /* PushViewController.swift */; };
 		BBE20F291BF02B5300880420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE20F281BF02B5300880420 /* AppDelegate.swift */; };
 		BBE20F2B1BF02B5300880420 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE20F2A1BF02B5300880420 /* ViewController.swift */; };
 		BBE20F2E1BF02B5300880420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE20F2C1BF02B5300880420 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		BB3BD6421C2A79CE00CE88A6 /* AttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
 		BB3BD6441C2B94EC00CE88A6 /* CollisionGravitySpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionGravitySpringViewController.swift; sourceTree = "<group>"; };
 		BB3BD6561C2BBCC000CE88A6 /* SnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
+		BB3BD6581C2BBF5600CE88A6 /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
 		BBE20F251BF02B5300880420 /* DynamicAnimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicAnimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE20F281BF02B5300880420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE20F2A1BF02B5300880420 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				BB3BD6421C2A79CE00CE88A6 /* AttachmentViewController.swift */,
 				BB3BD6441C2B94EC00CE88A6 /* CollisionGravitySpringViewController.swift */,
 				BB3BD6561C2BBCC000CE88A6 /* SnapViewController.swift */,
+				BB3BD6581C2BBF5600CE88A6 /* PushViewController.swift */,
 				BBE20F2C1BF02B5300880420 /* Main.storyboard */,
 				BBE20F2F1BF02B5300880420 /* Assets.xcassets */,
 				BBE20F311BF02B5300880420 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				BB3BD6431C2A79CE00CE88A6 /* AttachmentViewController.swift in Sources */,
 				BB3BD6411C2A75AE00CE88A6 /* CollisionGravityViewController.swift in Sources */,
 				BBE20F2B1BF02B5300880420 /* ViewController.swift in Sources */,
+				BB3BD6591C2BBF5600CE88A6 /* PushViewController.swift in Sources */,
 				BBE20F291BF02B5300880420 /* AppDelegate.swift in Sources */,
 				BB3BD6571C2BBCC000CE88A6 /* SnapViewController.swift in Sources */,
 				BB3BD63F1C2A71AB00CE88A6 /* GravityViewController.swift in Sources */,
