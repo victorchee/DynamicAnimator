@@ -123,6 +123,26 @@
                                             <segue destination="1vV-gh-8gt" kind="show" id="qBz-Lc-1di"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rcc-3l-9YW" style="IBUITableViewCellStyleDefault" id="w8L-xF-Yy8">
+                                        <rect key="frame" x="0.0" y="240" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w8L-xF-Yy8" id="sxy-3z-HJ3">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Snap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rcc-3l-9YW">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wR4-M3-lts" kind="show" id="CM3-3h-y8Z"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -171,6 +191,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3f7-ue-p0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1807" y="1136"/>
+        </scene>
+        <!--Snap View Controller-->
+        <scene sceneID="37S-ec-OGs">
+            <objects>
+                <viewController id="wR4-M3-lts" customClass="SnapViewController" customModule="DynamicAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0I-bI-zy5"/>
+                        <viewControllerLayoutGuide type="bottom" id="8cm-b2-SRB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7JQ-GS-uho">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-4b-KKb">
+                                <rect key="frame" x="256" y="256" width="88" height="88"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="il9-kS-P2r"/>
+                                    <constraint firstAttribute="width" constant="88" id="tBk-K6-n8o"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="R4d-4b-KKb" firstAttribute="centerY" secondItem="7JQ-GS-uho" secondAttribute="centerY" id="ILA-V2-PXX"/>
+                            <constraint firstItem="R4d-4b-KKb" firstAttribute="centerX" secondItem="7JQ-GS-uho" secondAttribute="centerX" id="sp0-hC-WqC"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FWo-1f-Csh" appends="YES" id="8hg-93-Zwr"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="itemView" destination="R4d-4b-KKb" id="0zN-Nm-2c3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsj-gH-qW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FWo-1f-Csh">
+                    <connections>
+                        <action selector="tap:" destination="wR4-M3-lts" id="ngh-um-dwT"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1807" y="1871"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XJ8-Pb-GsB">
