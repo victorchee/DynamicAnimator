@@ -103,6 +103,26 @@
                                             <segue destination="fvi-tT-l9q" kind="show" id="Bkd-kI-Wdb"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ozg-z0-9Rc" style="IBUITableViewCellStyleDefault" id="83d-Gn-GjV">
+                                        <rect key="frame" x="0.0" y="196" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="83d-Gn-GjV" id="8WY-h9-YaX">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Collision+Gravity+Spring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ozg-z0-9Rc">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1vV-gh-8gt" kind="show" id="qBz-Lc-1di"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -260,6 +280,64 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3206" y="1136"/>
+        </scene>
+        <!--Collision Gravity Spring View Controller-->
+        <scene sceneID="LI4-cV-8cq">
+            <objects>
+                <viewController id="1vV-gh-8gt" customClass="CollisionGravitySpringViewController" customModule="DynamicAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ra6-Ns-Xcl"/>
+                        <viewControllerLayoutGuide type="bottom" id="9qH-RO-aWr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JzJ-kf-jn8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-DR-Rsr">
+                                <rect key="frame" x="256" y="160" width="88" height="88"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-Ab-pg8">
+                                        <rect key="frame" x="34" y="34" width="20" height="20"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.30588235289999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-xW-Cc7">
+                                <rect key="frame" x="290" y="72" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.30588235289999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vVl-15-miU" appends="YES" id="cK8-HR-5Ec"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="attachmentView" destination="Eax-xW-Cc7" id="ff1-sA-dHl"/>
+                        <outlet property="itemAttachmentView" destination="gw9-Ab-pg8" id="73P-qD-RKh"/>
+                        <outlet property="itemView" destination="jRL-DR-Rsr" id="Oj8-om-MEO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9y-6X-WtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vVl-15-miU">
+                    <connections>
+                        <action selector="pan:" destination="1vV-gh-8gt" id="Dd7-0a-588"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3860" y="1136"/>
         </scene>
     </scenes>
 </document>
