@@ -215,29 +215,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-9e-9uq">
-                                <rect key="frame" x="290" y="40" width="20" height="20"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.30588235289999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="4Nz-yh-Vel"/>
-                                    <constraint firstAttribute="width" constant="20" id="ZQa-Zm-cRi"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5N-8Q-PEA">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5N-8Q-PEA">
                                 <rect key="frame" x="256" y="160" width="88" height="88"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-rZ-GfJ">
-                                        <rect key="frame" x="34" y="34" width="20" height="20"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSS-rZ-GfJ">
+                                        <rect key="frame" x="14" y="13" width="20" height="20"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.30588235289999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="Qwj-TS-kYf"/>
-                                            <constraint firstAttribute="height" constant="20" id="d9I-hd-rmB"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -246,22 +229,19 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="Y3I-7Z-JVC"/>
-                                    <constraint firstItem="gSS-rZ-GfJ" firstAttribute="centerY" secondItem="r5N-8Q-PEA" secondAttribute="centerY" id="ahg-iw-EYK"/>
-                                    <constraint firstItem="gSS-rZ-GfJ" firstAttribute="centerX" secondItem="r5N-8Q-PEA" secondAttribute="centerX" id="b15-Ld-xeI"/>
-                                    <constraint firstAttribute="height" constant="88" id="b8b-nL-JWP"/>
-                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xHg-9e-9uq">
+                                <rect key="frame" x="290" y="72" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.30588235289999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="r5N-8Q-PEA" firstAttribute="centerX" secondItem="Pee-os-fTj" secondAttribute="centerX" id="NYz-T4-3Lg"/>
-                            <constraint firstItem="xHg-9e-9uq" firstAttribute="top" secondItem="rU1-uU-Itx" secondAttribute="bottom" constant="20" id="aEU-1y-6Ci"/>
-                            <constraint firstItem="r5N-8Q-PEA" firstAttribute="top" secondItem="xHg-9e-9uq" secondAttribute="bottom" constant="100" id="dtE-t3-9rT"/>
-                            <constraint firstItem="xHg-9e-9uq" firstAttribute="centerX" secondItem="Pee-os-fTj" secondAttribute="centerX" id="l80-ox-CY7"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="nn7-EE-1sH" appends="YES" id="L8S-Za-gKF"/>
                         </connections>

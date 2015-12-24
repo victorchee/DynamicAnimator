@@ -16,19 +16,21 @@ class AttachmentViewController: UIViewController {
     var animator: UIDynamicAnimator!
     var attachmentBehavior: UIAttachmentBehavior!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         animator = UIDynamicAnimator(referenceView: view)
         
         let collisionBehavior = UICollisionBehavior(items: [itemView])
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collisionBehavior)
         
-        let attachmentPoint = UIOffset(horizontal: -25, vertical: -25)
-        attachmentBehavior = UIAttachmentBehavior(item: itemView, offsetFromCenter: attachmentPoint, attachedToAnchor: attachmentView.center)
+        let anchor = CGPoint(x: itemView.center.x, y: itemView.center.y - 100)
+        let offset = UIOffset(horizontal: -22, vertical: -22)
+        attachmentBehavior = UIAttachmentBehavior(item: itemView, offsetFromCenter: offset, attachedToAnchor: anchor)
+        attachmentBehavior.damping = 0.5
+        attachmentBehavior.frequency = 0.5
+        attachmentBehavior.frictionTorque = 0.5
         animator.addBehavior(attachmentBehavior)
-        
-//        itemAttachmentView.center = CGPoint(x: 25, y: 25)
     }
     
     @IBAction func pan(sender: UIPanGestureRecognizer) {
