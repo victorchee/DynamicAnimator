@@ -40,8 +40,8 @@ class CollisionGravitySpringViewController: UIViewController {
         animator.addBehavior(gravityBehavior)
     }
 
-    @IBAction func pan(sender: UIPanGestureRecognizer) {
-        attachmentBehavior.anchorPoint = sender.locationInView(view)
+    @IBAction func pan(_ sender: UIPanGestureRecognizer) {
+        attachmentBehavior.anchorPoint = sender.location(in: view)
         attachmentView.center = attachmentBehavior.anchorPoint
     }
 }

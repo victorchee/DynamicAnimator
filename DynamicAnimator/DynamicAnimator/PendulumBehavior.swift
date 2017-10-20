@@ -19,7 +19,7 @@ class PendulumBehavior: UIDynamicBehavior {
         let attachmentBehavior = UIAttachmentBehavior(item: item, attachedToAnchor: point)
         
         draggingBehavior = UIAttachmentBehavior(item: item, attachedToAnchor: CGPoint.zero)
-        pushBehavior = UIPushBehavior(items: [item], mode: .Instantaneous)
+        pushBehavior = UIPushBehavior(items: [item], mode: .instantaneous)
         pushBehavior.active = false
         
         addChildBehavior(gravityBehavior)

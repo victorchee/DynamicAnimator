@@ -21,7 +21,7 @@ class CustomViewController: UIViewController {
         buttonBounds = button.bounds
     }
     
-    @IBAction func buttonTapped(sender: UIButton) {
+    @IBAction func buttonTapped(_ sender: UIButton) {
         sender.bounds = buttonBounds
         
         animator = UIDynamicAnimator(referenceView: view)
@@ -33,8 +33,8 @@ class CustomViewController: UIViewController {
         attachmentBehavior.damping = 0.3
         animator.addBehavior(attachmentBehavior)
         
-        let pushBehavior = UIPushBehavior(items: [buttonBoundsDynamicItem], mode: .Instantaneous)
-        pushBehavior.angle = CGFloat(M_PI_4)
+        let pushBehavior = UIPushBehavior(items: [buttonBoundsDynamicItem], mode: .instantaneous)
+        pushBehavior.angle = .pi / 4
         pushBehavior.magnitude = 2
         animator.addBehavior(pushBehavior)
     }

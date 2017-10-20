@@ -18,7 +18,7 @@ class ItemViewController: UIViewController {
     var itemBehavior0: UIDynamicItemBehavior!
     var itemBehavior1: UIDynamicItemBehavior!
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         // Do any additional setup after loading the view.
@@ -41,13 +41,13 @@ class ItemViewController: UIViewController {
         animator.addBehavior(collisionBehavior)
     }
 
-    @IBAction func redo(sender: UIBarButtonItem) {
-        itemBehavior0.addLinearVelocity(CGPoint(x: 0, y: -1 * itemBehavior0.linearVelocityForItem(itemView0).y), forItem: itemView0)
+    @IBAction func redo(_ sender: UIBarButtonItem) {
+        itemBehavior0.addLinearVelocity(CGPoint(x: 0, y: -1 * itemBehavior0.linearVelocity(for: itemView0).y), for: itemView0)
         itemView0.center = originalItemView0Center
-        animator.updateItemUsingCurrentState(itemView0)
+        animator.updateItem(usingCurrentState: itemView0)
         
-        itemBehavior1.addLinearVelocity(CGPoint(x: 0, y: -1 * itemBehavior1.linearVelocityForItem(itemView1).y), forItem: itemView1)
+        itemBehavior1.addLinearVelocity(CGPoint(x: 0, y: -1 * itemBehavior1.linearVelocity(for: itemView1).y), for: itemView1)
         itemView1.center = originalItemView1Center
-        animator.updateItemUsingCurrentState(itemView1)
+        animator.updateItem(usingCurrentState: itemView1)
     }
 }

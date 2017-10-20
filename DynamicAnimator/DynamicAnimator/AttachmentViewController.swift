@@ -16,7 +16,7 @@ class AttachmentViewController: UIViewController {
     var animator: UIDynamicAnimator!
     var attachmentBehavior: UIAttachmentBehavior!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animator = UIDynamicAnimator(referenceView: view)
         
@@ -38,8 +38,8 @@ class AttachmentViewController: UIViewController {
         
     }
     
-    @IBAction func pan(sender: UIPanGestureRecognizer) {
-        attachmentBehavior.anchorPoint = sender.locationInView(view)
+    @IBAction func pan(_ sender: UIPanGestureRecognizer) {
+        attachmentBehavior.anchorPoint = sender.location(in: view)
         attachmentView.center = attachmentBehavior.anchorPoint
     }
 }

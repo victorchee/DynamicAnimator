@@ -21,14 +21,14 @@ class SnapViewController: UIViewController {
         animator = UIDynamicAnimator(referenceView: view)
     }
 
-    @IBAction func tap(sender: UITapGestureRecognizer) {
-        let point = sender.locationInView(view)
+    @IBAction func tap(_ sender: UITapGestureRecognizer) {
+        let point = sender.location(in: view)
         
         if let snap = snapBehavior {
             animator.removeBehavior(snap)
         }
         
-        snapBehavior = UISnapBehavior(item: itemView, snapToPoint: point)
+        snapBehavior = UISnapBehavior(item: itemView, snapTo: point)
         animator.addBehavior(snapBehavior!)
     }
 }

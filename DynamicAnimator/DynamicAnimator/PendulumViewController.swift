@@ -15,7 +15,7 @@ class PendulumViewController: UIViewController {
     var animator: UIDynamicAnimator!
     var pendulumBehavior: PendulumBehavior!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         // Do any additional setup after loading the view.
@@ -26,20 +26,20 @@ class PendulumViewController: UIViewController {
         animator.addBehavior(pendulumBehavior)
     }
 
-    @IBAction func pan(sender: UIPanGestureRecognizer) {
-        let point = sender.locationInView(view)
-        let velocity = sender.velocityInView(view)
-        if sender.state == .Began {
-            pendulumBehavior.beginDraggingWeightAtPoint(point)
-        } else if sender.state == .Ended {
-            pendulumBehavior.endDraggingWeightWithVelocity(velocity)
-        } else if sender.state == .Cancelled {
-            sender.enabled = true
-            pendulumBehavior.endDraggingWeightWithVelocity(velocity)
-        } else if !CGRectContainsPoint(itemView.bounds, point) {
-            sender.enabled = false // cancel
+    @IBAction func pan(_ sender: UIPanGestureRecognizer) {
+        let point = sender.location(in: view)
+        let velocity = sender.velocity(in: view)
+        if sender.state == .began {
+            pendulumBehavior.beginDraggingWeightAtPoint(point: point)
+        } else if sender.state == .ended {
+            pendulumBehavior.endDraggingWeightWithVelocity(velocity: velocity)
+        } else if sender.state == .cancelled {
+            sender.isEnabled = true
+            pendulumBehavior.endDraggingWeightWithVelocity(velocity: velocity)
+        } else if !itemView.bounds.contains(point) {
+            sender.isEnabled = false // cancel
         } else {
-            pendulumBehavior.dragWeightToPoint(point)
+            pendulumBehavior.dragWeightToPoint(point: point)
         }
     }
 }

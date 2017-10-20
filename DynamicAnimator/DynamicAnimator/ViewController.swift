@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         let dynamicItems: [UIDynamicItem] = [itemView0]
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         // 碰撞行为
         let collisionBehavior = UICollisionBehavior(items: dynamicItems)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
-        collisionBehavior.collisionMode = .Everything
+        collisionBehavior.collisionMode = .everything
         
         dynamicAnimator.addBehavior(collisionBehavior)
         
@@ -51,24 +51,24 @@ class ViewController: UIViewController {
         let dynamicItemBehavior = UIDynamicItemBehavior(items: dynamicItems)
         dynamicItemBehavior.elasticity = 0.5
         dynamicItemBehavior.allowsRotation = true
-        dynamicItemBehavior.addAngularVelocity(1.0, forItem: itemView0)
+        dynamicItemBehavior.addAngularVelocity(1.0, for: itemView0)
         
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
         // 推动行为
-        let pushBehavior = UIPushBehavior(items: dynamicItems, mode: .Instantaneous)
+        let pushBehavior = UIPushBehavior(items: dynamicItems, mode: .instantaneous)
         pushBehavior.pushDirection = CGVector(dx: 1.0, dy: 0)
         
         dynamicAnimator.addBehavior(pushBehavior)
         
         // 捕捉行为
-        let snapBehavior = UISnapBehavior(item: itemView0, snapToPoint: view.center)
+        let snapBehavior = UISnapBehavior(item: itemView0, snapTo: view.center)
         snapBehavior.damping = 0.5
         
         dynamicAnimator.addBehavior(snapBehavior)
         
         // 场行为
-        let noiseFiledBehavior = UIFieldBehavior.noiseFieldWithSmoothness(1.0, animationSpeed: 0.5)
+        let noiseFiledBehavior = UIFieldBehavior.noiseField(smoothness: 1.0, animationSpeed: 0.5)
         noiseFiledBehavior.addItem(itemView0)
         noiseFiledBehavior.strength = 0.5
         
